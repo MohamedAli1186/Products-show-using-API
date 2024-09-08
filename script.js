@@ -10,6 +10,10 @@ let getProducts = new Promise((suc, fail) => {
     .catch((er) => fail("No Data fetched"));
 });
 
+function redirectToDetails(productId) {
+    window.location.href = `Details.html?id=${productId}`;
+    }
+
 getProducts.then((data) => {
     products = data;
     for (let product of products) {
